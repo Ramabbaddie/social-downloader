@@ -262,11 +262,9 @@ def main():
     app.add_handler(CommandHandler("broadcast", broadcast))
 
     logger.info("Bot starting...")
-    app.run_polling(
-        port=PORT,
-        listen="0.0.0.0",
-        allowed_updates=Update.ALL_TYPES
-    )
+   app.run_polling(allowed_updates=Update.ALL_TYPES)
+
 
 if __name__ == "__main__":
+
     main()
