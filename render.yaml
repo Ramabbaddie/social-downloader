@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: social-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      BOT_TOKEN: "YOUR_TOKEN_HERE"
+      ADMIN_IDS: "YOUR_USER_ID"
