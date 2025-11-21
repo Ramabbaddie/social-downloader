@@ -247,7 +247,7 @@ async def broadcast(update: Update, context: CallbackContext):
     await status.edit_text(f"Done! Sent: {sent}, Failed: {failed}")
 
 # === MAIN ===
-def main():
+\def main():
     app = Application.builder().token(BOT_TOKEN).build()
 
     # Commands
