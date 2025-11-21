@@ -250,21 +250,31 @@ async def broadcast(update: Update, context: CallbackContext):
 def main():
     app = Application.builder().token(BOT_TOKEN).build()
 
-    # Add all commands
+    # Commands
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("help", help_command))
     app.add_handler(CommandHandler("about", about))
     app.add_handler(CommandHandler("instagram", handle_instagram))
     app.add_handler(CommandHandler("tiktok", handle_tiktok))
-    # ... add all other handlers here (facebook, youtube, etc.)
+    app.add_handler(CommandHandler("facebook", handle_facebook))
+    app.add_handler(CommandHandler("x", handle_x))
+    app.add_handler(CommandHandler("youtube", handle_youtube))
+    app.add_handler(CommandHandler("spotify", handle_spotify))
+    app.add_handler(CommandHandler("pinterest", handle_pinterest))
+    app.add_handler(CommandHandler("mediafire", handle_mediafire))
+    app.add_handler(CommandHandler("capcut", handle_capcut))
+    app.add_handler(CommandHandler("threads", handle_threads))
+    app.add_handler(CommandHandler("soundcloud", handle_soundcloud))
+    app.add_handler(CommandHandler("yt_trans", handle_yt_trans))
 
+    # Admin commands
     app.add_handler(CommandHandler("stats", stats_command))
     app.add_handler(CommandHandler("broadcast", broadcast))
+    app.add_handler(CommandHandler("adminhelp", adminhelp))
 
     logger.info("Bot starting...")
-   app.run_polling(allowed_updates=Update.ALL_TYPES)
+    app.run_polling(allowed_updates=Update.ALL_TYPES)
 
 
 if __name__ == "__main__":
-
     main()
